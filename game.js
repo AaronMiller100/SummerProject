@@ -3,7 +3,7 @@ var gameState = {
     musicMuted: false, // REMEMBER TO CHANGE TO FALSE
     audioSceneCreated: false,
     levelsCompleted: [false, false, false, false, false, false, false, false, false, false], // REMEMBER TO HAVE THIS NOT COMMENTED 
-    //levelsCompleted: [true, true, true, true, true, true, true, true, true, true],   
+    // levelsCompleted: [true, true, true, true, true, true, true, true, true, true],   
     levelStarted: false,
     levelJustStarted: false,
     levelFailed: false,

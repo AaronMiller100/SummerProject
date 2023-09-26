@@ -572,6 +572,8 @@ function refresh(){
         truck.hitSignalFirst = false;
         truck.stoppedMovingStarttime = null;
         truck.stoppedMovingEndtime = null;
+        truck.timeNotMoving = 0;
+        truck.throughputCalculated = false;
     });
 
     gameState.packagesDelivered = 0;
