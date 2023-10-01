@@ -10,9 +10,6 @@ class audioScene extends Phaser.Scene {
     }
 
     create (){
-        let backgroundMusic;
-        let musicCurrentlyPlaying = true;
-
         if (gameState.musicMuted == false){
             gameState.backgroundMusic = this.sound.add('backgroundMusic'); 
             gameState.backgroundMusic.loop = true;
@@ -25,7 +22,6 @@ class audioScene extends Phaser.Scene {
         if (gameState.musicMuted == true){
             this.musicCurrentlyPlaying = false;
             gameState.backgroundMusic.pause();
-            //this.game.sound.mute = true;
         } else if (gameState.musicMuted == false && this.musicCurrentlyPlaying == false){
             this.musicCurrentlyPlaying = true;
             let backgroundMusic = this.sound.add('backgroundMusic'); 
