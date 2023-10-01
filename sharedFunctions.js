@@ -273,7 +273,7 @@ function lockLogic(button, finishes, resources, trucks, scene){
         }
     });
     button.on('dragstart', function(){
-        dragging = true;button.alpha = 0.5;
+        button.alpha = 0.5;
     });
     button.on('drag', function(pointer){
         button.x = pointer.x;
