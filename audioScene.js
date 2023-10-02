@@ -4,7 +4,7 @@ class audioScene extends Phaser.Scene {
     }
 
     preload(){
-        this.load.audio('backgroundMusic', 'assets/song.wav');
+        this.load.audio('backgroundMusic', 'assets/Song.wav');
         this.load.audio('clickSound', 'assets/clickSound.mp3');
         this.load.audio('startSound', 'assets/startSound.mp3')
     }
