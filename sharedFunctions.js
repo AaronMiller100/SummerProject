@@ -1054,17 +1054,17 @@ function workOutThroughPut(){
     gameState.overallThroughput = 0;
     
     gameState.trucks.getChildren().forEach(function (truck){
-        // deals with trucks that are stopped but haven't started yet so to allow for real-time readings of throughput
+        // deals with trucks that are stopped but haven't started moving again so to allow for real-time readings of throughput
         if (truck.stoppedMovingStarttime != null && truck.stoppedMovingEndtime == null && truck.throughputCalculated == false){
             truck.timeNotMoving = new Date() - truck.stoppedMovingStarttime;
-            truck.throughput = (truck.timeNotMoving)/overallTime;
+            truck.throughput = truck.timeNotMoving/overallTime;
             gameState.overallThroughput = gameState.overallThroughput + truck.throughput;
         } else 
 
         // deals with trucks that have started moving again after stopping moving
         if (truck.stoppedMovingStarttime != null && truck.stoppedMovingEndtime != null && truck.throughputCalculated == false){            
             truck.timeNotMoving = truck.stoppedMovingEndtime - truck.stoppedMovingStarttime;
-            truck.throughput = (truck.timeNotMoving)/overallTime;
+            truck.throughput = truck.timeNotMoving/overallTime;
             gameState.overallThroughput = gameState.overallThroughput + truck.throughput;
         } else
 
@@ -1076,8 +1076,7 @@ function workOutThroughPut(){
         }
     });
 
-    let returnValue = gameState.overallThroughput/gameState.trucks.getChildren().length;    
-
+    let returnValue = gameState.overallThroughput/gameState.trucks.getChildren().length;  
     returnValue = Math.abs(returnValue-1);
     return Math.round(returnValue*100);
 }
